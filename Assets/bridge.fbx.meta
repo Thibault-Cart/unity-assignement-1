@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c9b68b0cf79ea04797b40bdbe7f65c7
+guid: fdeac73d9e8dcbb4cb8e193f99d9530f
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -104,10 +104,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 240452
-  packageName: Nature Low-Poly pack
-  packageVersion: 1.0
-  assetPath: Assets/Nature Low-Poly Pack By TexTheMess/Nature Models/FBX/rock 4.fbx
-  uploadId: 546787
