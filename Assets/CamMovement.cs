@@ -79,7 +79,7 @@ public class CamMovement : MonoBehaviour
         {
             p_Velocity += new Vector3(0, 3, 0);
         }
-        if (Input.GetKey(KeyCode.LeftShift)|| Input.GetKey(KeyCode.RightShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             p_Velocity += new Vector3(0, -1, 0);
         }
