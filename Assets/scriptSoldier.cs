@@ -55,7 +55,8 @@ public class scriptSoldier : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject b = Instantiate(bullet);
+            GameObject b = Instantiate(bullet) ;
+           
             b.transform.position = shootpoint.transform.position;
             b.transform.rotation = shootpoint.transform.rotation;
         }

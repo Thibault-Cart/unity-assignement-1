@@ -23,10 +23,7 @@ public class scriptTest : MonoBehaviour
     void Update()
     {
 
-        print("Quack");
-        print("my name is "+DuckName);
-
-
+       
         // Déplacement vers l'avant et l'arrière avec les flèches haut et bas
         if (Input.GetKey(KeyCode.UpArrow))
         {
