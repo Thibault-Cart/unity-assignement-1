@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class scriptSoldier : MonoBehaviour
@@ -36,24 +37,29 @@ public class scriptSoldier : MonoBehaviour
         cam.transform.localEulerAngles = new Vector3(newRotationX, cam.transform.localEulerAngles.y, cam.transform.localEulerAngles.z);
 
 
+        Vector3 direction = Vector3.zero;
+
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(0, 0, speed * Time.deltaTime);
+            direction += Vector3.forward;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(0, 0, -speed * Time.deltaTime);
+            direction += Vector3.back;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(-speed * Time.deltaTime, 0, 0);
+            direction += Vector3.left;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(speed * Time.deltaTime, 0, 0);
+            direction += Vector3.right;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        transform.Translate(direction.normalized * speed * Time.deltaTime);
+
+
+        if (Input.GetMouseButton(0))
         {
             GameObject b = Instantiate(bullet) ;
            
