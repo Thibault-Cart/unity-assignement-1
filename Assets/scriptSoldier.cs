@@ -19,6 +19,10 @@ public class scriptSoldier : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();  // Get the Rigidbody component
+
+
+        // Hides the cursor...
+        Cursor.visible = false;
     }
 
     void OnCollisionStay()
