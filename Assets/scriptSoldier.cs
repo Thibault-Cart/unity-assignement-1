@@ -41,7 +41,7 @@ public class scriptSoldier : MonoBehaviour
 
         float mouseY = Input.GetAxis("Mouse Y");
         float newRotationX = cam.transform.localEulerAngles.x - mouseY * rotationSpeed * Time.deltaTime;
-        
+
 
         // Convert the angle to the range [-180, 180] to handle clamping correctly.
         if (newRotationX > 180) newRotationX -= 360;
@@ -72,9 +72,9 @@ public class scriptSoldier : MonoBehaviour
         {
             direction += Vector3.right;
         }
-        
-        
-            transform.Translate(direction.normalized * speed * Time.deltaTime);
+
+
+        transform.Translate(direction.normalized * speed * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
@@ -86,13 +86,32 @@ public class scriptSoldier : MonoBehaviour
 
 
 
-
+        //left click
         if (Input.GetMouseButtonDown(0))
         {
             GameObject b = Instantiate(bullet);
 
             b.transform.position = shootpoint.transform.position;
             b.transform.rotation = shootpoint.transform.rotation;
+        }
+        // right click
+        if (Input.GetMouseButtonDown(1))
+        {
+
+            // Instantiate the first bullet (straight shot)
+            GameObject b1 = Instantiate(bullet);
+            b1.transform.position = shootpoint.transform.position;
+            b1.transform.rotation = shootpoint.transform.rotation;
+
+            // Instantiate the second bullet (angled 15 degrees to the left)
+            GameObject b2 = Instantiate(bullet);
+            b2.transform.position = shootpoint.transform.position;
+            b2.transform.rotation = shootpoint.transform.rotation * Quaternion.Euler(0, -15, 0);
+
+            // Instantiate the third bullet (angled 15 degrees to the right)
+            GameObject b3 = Instantiate(bullet);
+            b3.transform.position = shootpoint.transform.position;
+            b3.transform.rotation = shootpoint.transform.rotation * Quaternion.Euler(0, 15, 0);
         }
 
         void OnCollisionEnter(Collision collision)
