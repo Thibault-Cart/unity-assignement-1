@@ -28,7 +28,7 @@ public class scriptSoldier : MonoBehaviour
     void OnCollisionStay()
     {
         isGrounded = true;
-        print("grounded");
+      //  print("grounded");
     }
 
 

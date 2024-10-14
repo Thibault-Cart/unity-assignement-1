@@ -11,7 +11,7 @@ public class CamMovement : MonoBehaviour
     public TextMeshProUGUI txtFps;
     void Update()
     {
-        print(1.0 / Time.deltaTime);
+       // print(1.0 / Time.deltaTime);
         //fps
         txtFps.text = " FPS:" + (Math.Round(1.0 / Time.deltaTime));
 

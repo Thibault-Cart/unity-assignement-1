@@ -34,10 +34,7 @@ public class ScriptQuitGame : MonoBehaviour
 
     }
 
-    public void test()
-    {
-        SceneManager.LoadScene("MainScene");
-    }
+   
     // Update is called once per frame
     void Update()
     {
