@@ -18,6 +18,10 @@ public class ScriptQuitGame : MonoBehaviour
         Button btn2 = btnQuit.GetComponent<Button>();
         btn2.onClick.AddListener(btnQuitClick);
 
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
     }
 
     private void btnQuitClick()
