@@ -22,7 +22,7 @@ public class BaseManager : MonoBehaviour
            
             Debug.Log("Base hit");
             
-            SceneManager.LoadScene("GameOver");
+          SceneManager.LoadScene("GameOver");
         }
     }
 
