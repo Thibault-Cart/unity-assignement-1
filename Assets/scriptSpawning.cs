@@ -6,6 +6,7 @@ public class scriptSpawning : MonoBehaviour
 {
     public float spawntime = 10.0f;
     private float timesinceLastSpawn = 0;
+    public float SpawnRange = 100;
     public GameObject duck;
     // Start is called before the first frame update
     void Start()
@@ -32,8 +33,8 @@ public class scriptSpawning : MonoBehaviour
         GameObject b = Instantiate(duck);
 
         // Générer un décalage aléatoire entre -200 et 200 sur les axes X et Z
-        float randomX = Random.Range(-200f, 200f);
-        float randomZ = Random.Range(-200f, 200f);
+        float randomX = Random.Range(-SpawnRange, SpawnRange);
+        float randomZ = Random.Range(-SpawnRange, SpawnRange);
         Vector3 offset = new Vector3(randomX, 0, randomZ);
 
         // Générer une rotation aléatoire sur l'axe Z

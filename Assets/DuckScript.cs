@@ -5,8 +5,8 @@ using UnityEngine.AI;
 
 public class scriptTest : MonoBehaviour
 {
-    public float speed = 0.2f;
-    public float lifeTime = 20;
+   
+
     private GameObject objectiv;
 
     public NavMeshAgent agent;
@@ -28,16 +28,6 @@ public class scriptTest : MonoBehaviour
         print(objectiv.transform);
 
         agent.destination=objectiv.transform.position;
-        /*
-        lifeTime -= Time.deltaTime;
-
-        if (lifeTime <= 0.0f)
-        {
-
-            Destroy(gameObject);
-        }
-
-        this.transform.Translate(0, -speed * Time.deltaTime, 0);
-        */
+       
     }
 }

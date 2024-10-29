@@ -10,7 +10,7 @@ public class scriptSoldier : MonoBehaviour
     public GameObject bullet;
     public GameObject shootpoint;
     public Camera cam;
-
+    public ParticleSystem muzzleFlash;
     public bool isGrounded;
     public float jumpForce = 5.0f;  // Set the jump force
     private Rigidbody rb;  // Reference to the Rigidbody component
@@ -19,7 +19,7 @@ public class scriptSoldier : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();  // Get the Rigidbody component
-
+        muzzleFlash.Stop();
 
         // Hides the cursor...
         Cursor.visible = false;
@@ -93,11 +93,12 @@ public class scriptSoldier : MonoBehaviour
 
             b.transform.position = shootpoint.transform.position;
             b.transform.rotation = shootpoint.transform.rotation;
+            muzzleFlash.Play();
         }
         // right click
         if (Input.GetMouseButtonDown(1))
         {
-
+            muzzleFlash.Play();
             // Instantiate the first bullet (straight shot)
             GameObject b1 = Instantiate(bullet);
             b1.transform.position = shootpoint.transform.position;

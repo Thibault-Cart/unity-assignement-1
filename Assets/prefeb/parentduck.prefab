@@ -48,7 +48,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   lifeTime: 30
-  objectiv: {fileID: 0}
   agent: {fileID: 1904207163432631475}
 --- !u!195 &1904207163432631475
 NavMeshAgent:
@@ -60,8 +59,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1000
-  m_Acceleration: 100
+  m_Speed: 70
+  m_Acceleration: 1000
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
