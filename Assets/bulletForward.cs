@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class bulletForward : MonoBehaviour
 {
+
+    // Reference to the particle system prefab
+    public GameObject hitParticlePrefab;
+
     public float speed = 20;
 
     public float lifeTime = 10.01f;     //How many seconds(or fraction thereof) this object will survive
@@ -17,9 +21,15 @@ public class bulletForward : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy")
         {
+
+            // Instantiate the particle system at the collision point
+            GameObject particleInstance = Instantiate(hitParticlePrefab, collision.contacts[0].point, Quaternion.identity);
+
+
             Destroy(collision.gameObject);
-            
+
         }
+
         Destroy(this.gameObject);
     }
 

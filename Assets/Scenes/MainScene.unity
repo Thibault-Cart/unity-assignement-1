@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 131157449}
   - component: {fileID: 131157448}
   m_Layer: 0
-  m_Name: Snow
+  m_Name: SnowIsland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -790,7 +790,7 @@ Transform:
   m_GameObject: {fileID: 131157447}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -804, y: 703.5, z: 284}
+  m_LocalPosition: {x: 679, y: 703.5, z: 598}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10549,7 +10549,7 @@ GameObject:
   - component: {fileID: 1832418764}
   - component: {fileID: 1832418763}
   m_Layer: 0
-  m_Name: SnowIsland
+  m_Name: SnowGeneral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11270,7 +11270,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 21.39, y: 20, z: 1}
+    m_Scale: {x: 100, y: 100, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -15363,7 +15363,7 @@ Transform:
   m_GameObject: {fileID: 1832418762}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6913925, y: -0.1482445, z: 0.14824446, w: 0.69139254}
-  m_LocalPosition: {x: 571, y: 805.4, z: 515}
+  m_LocalPosition: {x: 292, y: 664, z: 389}
   m_LocalScale: {x: 6.9746, y: 6.9746, z: 6.9746}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21141,8 +21141,8 @@ SceneRoots:
   - {fileID: 24840691}
   - {fileID: 34865706}
   - {fileID: 2090368825}
-  - {fileID: 131157450}
   - {fileID: 873871196910114078}
   - {fileID: 1081473717}
   - {fileID: 724182616}
   - {fileID: 1832418765}
+  - {fileID: 131157450}
