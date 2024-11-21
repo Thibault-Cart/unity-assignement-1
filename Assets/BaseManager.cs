@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class BaseManager : MonoBehaviour
 {
+    private AudioSource duckHitBaseSound;
     // Start is called before the first frame update
     void Start()
     {
-        
+        duckHitBaseSound = GetComponent<AudioSource>();
     }
 
     //Detect collisions between the GameObjects with Colliders attached
@@ -21,8 +22,9 @@ public class BaseManager : MonoBehaviour
         {
            
             Debug.Log("Base hit");
-            
-          SceneManager.LoadScene("GameOver");
+            duckHitBaseSound.PlayOneShot(duckHitBaseSound.clip);
+            Destroy(collision.gameObject);
+         // SceneManager.LoadScene("GameOver");
         }
     }
 

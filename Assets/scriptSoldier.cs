@@ -13,6 +13,9 @@ public class scriptSoldier : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public bool isGrounded;
     public float jumpForce = 5.0f;  // Set the jump force
+
+    private AudioSource audioGun ;
+
     private Rigidbody rb;  // Reference to the Rigidbody component
 
     // Start is called before the first frame update
@@ -23,6 +26,8 @@ public class scriptSoldier : MonoBehaviour
 
         // Hides the cursor...
         Cursor.visible = false;
+
+        audioGun = GetComponent<AudioSource>();
     }
 
     void OnCollisionStay()
@@ -94,6 +99,8 @@ public class scriptSoldier : MonoBehaviour
             b.transform.position = shootpoint.transform.position;
             b.transform.rotation = shootpoint.transform.rotation;
             muzzleFlash.Play();
+            audioGun.PlayOneShot(audioGun.clip);
+           
         }
         // right click
         if (Input.GetMouseButtonDown(1))
@@ -113,6 +120,9 @@ public class scriptSoldier : MonoBehaviour
             GameObject b3 = Instantiate(bullet);
             b3.transform.position = shootpoint.transform.position;
             b3.transform.rotation = shootpoint.transform.rotation * Quaternion.Euler(0, 15, 0);
+
+            audioGun.PlayOneShot(audioGun.clip);
+
         }
 
         void OnCollisionEnter(Collision collision)
