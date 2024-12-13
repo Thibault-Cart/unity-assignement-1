@@ -15,11 +15,12 @@ public class BaseManager : MonoBehaviour
     private bool isColliding = false;  // Empêche plusieurs collisions
 
     Vignette vignette;
-
+    ChromaticAberration chrom;
     void Start()
     {
         duckHitBaseSound = GetComponent<AudioSource>();
         volum.profile.TryGet(out vignette);
+        volum.profile.TryGet(out chrom);
     }
 
     // Détecter les collisions entre les GameObjects avec des Colliders attachés
@@ -44,7 +45,7 @@ public class BaseManager : MonoBehaviour
 
             // Activer l'effet Vignette (intensité au maximum)
             vignette.intensity.value = 1.0f;
-
+            chrom.intensity.value += 0.5f;
             // Détruire la vie actuelle
             if (nbvie < vie.Length)
             {
