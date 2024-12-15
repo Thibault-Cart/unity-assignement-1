@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,7 +15,7 @@ public class scriptSoldier : MonoBehaviour
     public bool isGrounded;
     public float jumpForce = 5.0f;  // Set the jump force
 
-    private AudioSource audioGun ;
+    private AudioSource audioGun;
 
     private Rigidbody rb;  // Reference to the Rigidbody component
 
@@ -33,29 +34,40 @@ public class scriptSoldier : MonoBehaviour
     void OnCollisionStay()
     {
         isGrounded = true;
-      //  print("grounded");
+        //  print("grounded");
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X");
-        transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
+        try
+        {
+            float mouseX = Input.GetAxis("Mouse X");
+            transform.Rotate(0, mouseX * rotationSpeed * Time.deltaTime, 0);
 
 
-        float mouseY = Input.GetAxis("Mouse Y");
-        float newRotationX = cam.transform.localEulerAngles.x - mouseY * rotationSpeed * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y");
+
+            float newRotationX = cam.transform.localEulerAngles.x - mouseY * rotationSpeed * Time.deltaTime;
 
 
-        // Convert the angle to the range [-180, 180] to handle clamping correctly.
-        if (newRotationX > 180) newRotationX -= 360;
+            // Convert the angle to the range [-180, 180] to handle clamping correctly.
+            if (newRotationX > 180) newRotationX -= 360;
 
-        // Clamp the angle between -20 and 20 degrees.
-        newRotationX = Mathf.Clamp(newRotationX, -20f, 20f);
+            // Clamp the angle between -20 and 20 degrees.
+            newRotationX = Mathf.Clamp(newRotationX, -20f, 20f);
 
-        // Apply the clamped rotation back to the camera.
-        cam.transform.localEulerAngles = new Vector3(newRotationX, cam.transform.localEulerAngles.y, cam.transform.localEulerAngles.z);
+
+            // Apply the clamped rotation back to the camera.
+            cam.transform.localEulerAngles = new Vector3(newRotationX, cam.transform.localEulerAngles.y, cam.transform.localEulerAngles.z);
+
+        }
+        catch (Exception e)
+        {
+            print(e.ToString());
+        }
+
 
 
         Vector3 direction = Vector3.zero;
@@ -94,13 +106,22 @@ public class scriptSoldier : MonoBehaviour
         //left click
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject b = Instantiate(bullet);
+            try
+            {
+                GameObject b = Instantiate(bullet);
 
-            b.transform.position = shootpoint.transform.position;
-            b.transform.rotation = shootpoint.transform.rotation;
-            muzzleFlash.Play();
-            audioGun.PlayOneShot(audioGun.clip);
-           
+
+
+                b.transform.position = shootpoint.transform.position;
+                b.transform.rotation = shootpoint.transform.rotation;
+
+                muzzleFlash.Play();
+                audioGun.PlayOneShot(audioGun.clip);
+            }
+            catch (Exception e)//remove exception about unasigned variable
+            {
+                print(e.Message);
+            }
         }
         // right click
         if (Input.GetMouseButtonDown(1))
