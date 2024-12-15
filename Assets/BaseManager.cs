@@ -56,7 +56,7 @@ public class BaseManager : MonoBehaviour
             // Si toutes les vies sont perdues, charger la scène "GameOver"
             if (nbvie >= vie.Length)
             {
-                SceneManager.LoadScene("GameOver");
+                SceneManager.LoadScene("MainMenu");
             }
         }
     }
